@@ -1,0 +1,1339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema-instance">
+    <xs:Type name="string">
+        <xs:sequence>
+            <xs:element name="margin"/>
+                <xs:name type="String"/>
+                <xs:complexType mixed="true">
+                    <xs:sequence>
+                        <xs:element name="penetration" type="int" />
+                        <xs:element name="tag" type="String" />
+                        <xs:element name="shared" type="tag">
+                            <xs:complexType mixed="true">
+                                <xs:sequence>
+                                    <xs:element name="shared" />
+                                    <xs:element name="per-triangle-shape" />
+                                    <xs:element name="bone" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:choice>
+                                                    <xs:element name="mass" xs:type="float" />
+                                                    <xs:element name="inertia" xs:type="Int">
+                                                        <xs:complexType>
+                                                            <type name="mixed" type="Integer" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="Null">
+                                                                        <xs:enumeration value="10" />
+                                                                        <xs:enumeration value="100" />
+                                                                        <xs:enumeration value="1000" />
+                                                                        <xs:enumeration value="1110" />
+                                                                        <xs:enumeration value="1500" />
+                                                                        <xs:enumeration value="15000" />
+                                                                        <xs:enumeration value="20" />
+                                                                        <xs:enumeration value="300" />
+                                                                        <xs:enumeration value="3000" />
+                                                                        <xs:enumeration value="50" />
+                                                                        <xs:enumeration value="510" />
+                                                                        <xs:enumeration value="550" />
+                                                                        <xs:enumeration value="555" />
+                                                                        <xs:enumeration value="75" />
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </type>
+                                                            <xs:Element name="y" type="integer" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="integer">
+                                                                        <xs:enumeration value="10" />
+                                                                        <xs:enumeration value="1000" />
+                                                                        <xs:enumeration value="1110" />
+                                                                        <xs:enumeration value="1500" />
+                                                                        <xs:enumeration value="18000" />
+                                                                        <xs:enumeration value="2" />
+                                                                        <xs:enumeration value="20" />
+                                                                        <xs:enumeration value="300" />
+                                                                        <xs:enumeration value="50" />
+                                                                        <xs:enumeration value="500" />
+                                                                        <xs:enumeration value="5000" />
+                                                                        <xs:enumeration value="510" />
+                                                                        <xs:enumeration value="550" />
+                                                                        <xs:enumeration value="555" />
+                                                                        <xs:enumeration value="75" />
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:Element>
+                                                            <xs:Element name="z" type="xs:integer" use="required">
+                                                                <xs:simpleType>
+                                                                    <xs:restriction base="xs:string">
+                                                                        <xs:enumeration value="10" />
+                                                                        <xs:enumeration value="100" />
+                                                                        <xs:enumeration value="1000" />
+                                                                        <xs:enumeration value="1110" />
+                                                                        <xs:enumeration value="1500" />
+                                                                        <xs:enumeration value="15000" />
+                                                                        <xs:enumeration value="20" />
+                                                                        <xs:enumeration value="2000" />
+                                                                        <xs:enumeration value="300" />
+                                                                        <xs:enumeration value="3500" />
+                                                                        <xs:enumeration value="50" />
+                                                                        <xs:enumeration value="510" />
+                                                                        <xs:enumeration value="550" />
+                                                                        <xs:enumeration value="555" />
+                                                                        <xs:enumeration value="75" />
+                                                                        <xs:enumeration value="900" />
+                                                                    </xs:restriction>
+                                                                </xs:simpleType>
+                                                            </xs:Element>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="centerOfMassTransform">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="basis-axis-angle" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:Element name="x" type="xs:integer" use="required" fixed="0" />
+                                                                        <xs:Element name="y" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="0" />
+                                                                                    <xs:enumeration value="0.09" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                        <xs:Element name="z" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="-0.03" />
+                                                                                    <xs:enumeration value="0" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                        <xs:Element name="angle" type="xs:decimal" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="0.17" />
+                                                                                    <xs:enumeration value="0.27" />
+                                                                                    <xs:enumeration value="0.3" />
+                                                                                    <xs:enumeration value="0.34" />
+                                                                                    <xs:enumeration value="0.6" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="origin">
+                                                                    <xs:complexType>
+                                                                        <xs:Element name="x" type="xs:integer" use="required" fixed="0" />
+                                                                        <xs:Element name="y" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="-0.01" />
+                                                                                    <xs:enumeration value="0" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                        <xs:Element name="z" type="xs:integer" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="0" />
+                                                                                    <xs:enumeration value="1" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                                <xs:element name="basis" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:Element name="x" type="xs:integer" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="-5" />
+                                                                                    <xs:enumeration value="0" />
+                                                                                    <xs:enumeration value="2" />
+                                                                                    <xs:enumeration value="5" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                        <xs:Element name="y" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="0" />
+                                                                                    <xs:enumeration value="0.02" />
+                                                                                    <xs:enumeration value="0.3" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                        <xs:Element name="z" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="-2" />
+                                                                                    <xs:enumeration value="0" />
+                                                                                    <xs:enumeration value="0.3" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                        <xs:Element name="w" use="required">
+                                                                            <xs:simpleType>
+                                                                                <xs:restriction base="xs:string">
+                                                                                    <xs:enumeration value="0.15" />
+                                                                                    <xs:enumeration value="0.3" />
+                                                                                    <xs:enumeration value="1" />
+                                                                                    <xs:enumeration value="3" />
+                                                                                </xs:restriction>
+                                                                            </xs:simpleType>
+                                                                        </xs:Element>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                    <xs:element name="linearDamping" type="xs:string" />
+                                                    <xs:element name="angularDamping" type="xs:string" />
+                                                    <xs:element name="gravity-factor" type="xs:string" />
+                                                    <xs:element name="friction" type="xs:string" />
+                                                    <xs:element name="rollingFriction" type="xs:string" />
+                                                    <xs:element name="restitution" type="xs:string" />
+                                                    <xs:element name="margin-multiplier" minOccurs="0" type="xs:string" />
+                                                    <xs:choice />
+                                                </xs:choice>
+                                            </xs:sequence>
+                                            <xs:Element name="name" use="required" />
+                                            <xs:Element name="tag">
+                                                <xs:simpleType>
+                                                    <xs:restriction base="xs:string">
+                                                        <xs:enumeration value="FingersL" />
+                                                        <xs:enumeration value="FingersR" />
+                                                    </xs:restriction>
+                                                </xs:simpleType>
+                                            </xs:Element>
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="generic-constraint" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="frameInB">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="basis" minOccurs="0">
+                                                                <xs:complexType>
+                                                                    <xs:Element name="x" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-1" />
+                                                                                <xs:enumeration value="0" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="y" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-0.03" />
+                                                                                <xs:enumeration value="-0.5" />
+                                                                                <xs:enumeration value="-3" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="0.5" />
+                                                                                <xs:enumeration value="1" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="z" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-0.5" />
+                                                                                <xs:enumeration value="-1" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="0.03" />
+                                                                                <xs:enumeration value="1" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="w" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="1" />
+                                                                                <xs:enumeration value="10" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="origin">
+                                                                <xs:complexType>
+                                                                    <xs:Element name="x" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-5" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="1" />
+                                                                                <xs:enumeration value="5" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="y" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="5" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="z" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-0.5" />
+                                                                                <xs:enumeration value="-1" />
+                                                                                <xs:enumeration value="-3" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="2" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="basis-axis-angle" minOccurs="0">
+                                                                <xs:complexType>
+                                                                    <xs:Element name="x" type="xs:integer" use="required" />
+                                                                    <xs:Element name="y" type="xs:integer" use="required" />
+                                                                    <xs:Element name="z" type="xs:integer" use="required" fixed="0" />
+                                                                    <xs:Element name="angle" use="required" />
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="useLinearReferenceFrameA" type="xs:string" />
+                                                <xs:element name="linearLowerLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.07" />
+                                                                    <xs:enumeration value="-0.1" />
+                                                                    <xs:enumeration value="-1" />
+                                                                    <xs:enumeration value="-10" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="-3.07" />
+                                                                    <xs:enumeration value="-4" />
+                                                                    <xs:enumeration value="-8" />
+                                                                    <xs:enumeration value="0" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.01" />
+                                                                    <xs:enumeration value="-0.2" />
+                                                                    <xs:enumeration value="-10" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="-3.01" />
+                                                                    <xs:enumeration value="0" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0" />
+                                                                    <xs:enumeration value="-0.01" />
+                                                                    <xs:enumeration value="-10" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="-3" />
+                                                                    <xs:enumeration value="-3.01" />
+                                                                    <xs:enumeration value="-4.5" />
+                                                                    <xs:enumeration value="-6" />
+                                                                    <xs:enumeration value="-8" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearUpperLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.07" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="2" />
+                                                                    <xs:enumeration value="3.07" />
+                                                                    <xs:enumeration value="4" />
+                                                                    <xs:enumeration value="8" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="2" />
+                                                                    <xs:enumeration value="3.01" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="1.2" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="2" />
+                                                                    <xs:enumeration value="3" />
+                                                                    <xs:enumeration value="3.01" />
+                                                                    <xs:enumeration value="8" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularLowerLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0" />
+                                                                    <xs:enumeration value="-0.001" />
+                                                                    <xs:enumeration value="-0.1" />
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="-0.301" />
+                                                                    <xs:enumeration value="-0.5" />
+                                                                    <xs:enumeration value="-1" />
+                                                                    <xs:enumeration value="-1.0" />
+                                                                    <xs:enumeration value="0" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0" />
+                                                                    <xs:enumeration value="-0.01" />
+                                                                    <xs:enumeration value="-0.02" />
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="-0.301" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0." />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.0" />
+                                                                    <xs:enumeration value="-0.05" />
+                                                                    <xs:enumeration value="-0.1" />
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0." />
+                                                                    <xs:enumeration value="0.001" />
+                                                                    <xs:enumeration value="0.301" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularUpperLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.001" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.301" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="0.02" />
+                                                                    <xs:enumeration value="0.301" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="1" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.0" />
+                                                                    <xs:enumeration value="0.001" />
+                                                                    <xs:enumeration value="0.05" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.301" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearStiffness">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="1600" />
+                                                                    <xs:enumeration value="200" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="70" />
+                                                                    <xs:enumeration value="800" />
+                                                                    <xs:enumeration value="90" />
+                                                                    <xs:enumeration value="900" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.79" />
+                                                                    <xs:enumeration value="200" />
+                                                                    <xs:enumeration value="250" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="800" />
+                                                                    <xs:enumeration value="900" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="120" />
+                                                                    <xs:enumeration value="1200" />
+                                                                    <xs:enumeration value="200" />
+                                                                    <xs:enumeration value="40" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="800" />
+                                                                    <xs:enumeration value="900" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularStiffness">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.2" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="1000" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="90" />
+                                                                    <xs:enumeration value="900" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.4" />
+                                                                    <xs:enumeration value="0.73" />
+                                                                    <xs:enumeration value="100" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="70" />
+                                                                    <xs:enumeration value="900" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.4" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="10000" />
+                                                                    <xs:enumeration value="40" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="5000" />
+                                                                    <xs:enumeration value="900" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearDamping">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.75" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="14" />
+                                                                    <xs:enumeration value="2" />
+                                                                    <xs:enumeration value="20" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularDamping">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="2" />
+                                                                    <xs:enumeration value="8" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearEquilibrium">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-5" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="5" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-1" />
+                                                                    <xs:enumeration value="-10" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.0" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="3" />
+                                                                    <xs:enumeration value="5" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required" />
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularEquilibrium">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" type="xs:integer" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-10" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="5" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" type="xs:integer" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-30" />
+                                                                    <xs:enumeration value="0" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearBounce" minOccurs="0">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="30" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="30" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.2" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="3" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularBounce" minOccurs="0">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="1.0" />
+                                                                    <xs:enumeration value="90" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="1.0" />
+                                                                    <xs:enumeration value="90" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="1.0" />
+                                                                    <xs:enumeration value="9" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="minDistanceFactor" minOccurs="0" type="xs:string" />
+                                                <xs:element name="maxDistanceFactor" minOccurs="0" type="xs:string" />
+                                                <xs:element name="stiffness" minOccurs="0" type="xs:string" />
+                                                <xs:element name="damping" minOccurs="0" type="xs:string" />
+                                                <xs:element name="equilibrium" minOccurs="0" type="xs:string" />
+                                            </xs:sequence>
+                                            <xs:Element name="bodyA" use="required" />
+                                            <xs:Element name="bodyB" />
+                                            <xs:Element name="BodyB" />
+                                            <xs:Element name="BodyC" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="stiffspring-constraint" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="frameInB">
+                                                    <xs:complexType>
+                                                        <xs:sequence>
+                                                            <xs:element name="basis" minOccurs="0">
+                                                                <xs:complexType>
+                                                                    <xs:Element name="x" type="xs:integer" use="required" fixed="0" />
+                                                                    <xs:Element name="y" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-10" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="0.3" />
+                                                                                <xs:enumeration value="1" />
+                                                                                <xs:enumeration value="15" />
+                                                                                <xs:enumeration value="25.3" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="z" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-5" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="5" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="w" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="1" />
+                                                                                <xs:enumeration value="100" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="origin">
+                                                                <xs:complexType>
+                                                                    <xs:Element name="x" type="xs:integer" use="required" fixed="0" />
+                                                                    <xs:Element name="y" type="xs:integer" use="required">
+                                                                        <xs:simpleType>
+                                                                            <xs:restriction base="xs:string">
+                                                                                <xs:enumeration value="-1" />
+                                                                                <xs:enumeration value="0" />
+                                                                                <xs:enumeration value="10" />
+                                                                                <xs:enumeration value="2" />
+                                                                            </xs:restriction>
+                                                                        </xs:simpleType>
+                                                                    </xs:Element>
+                                                                    <xs:Element name="z" type="xs:integer" use="required" fixed="0" />
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                            <xs:element name="basis-axis-angle" minOccurs="0">
+                                                                <xs:complexType>
+                                                                    <xs:Element name="x" type="xs:integer" use="required" />
+                                                                    <xs:Element name="y" type="xs:integer" use="required" />
+                                                                    <xs:Element name="z" type="xs:integer" use="required" />
+                                                                    <xs:Element name="angle" type="xs:decimal" use="required" />
+                                                                </xs:complexType>
+                                                            </xs:element>
+                                                        </xs:sequence>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="useLinearReferenceFrameA" type="xs:string" />
+                                                <xs:element name="linearLowerLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.07" />
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="-4" />
+                                                                    <xs:enumeration value="0.07" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.01" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="-4" />
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="8.01" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.01" />
+                                                                    <xs:enumeration value="-1" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="-4" />
+                                                                    <xs:enumeration value="0.01" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearUpperLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.07" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="4" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="10.01" />
+                                                                    <xs:enumeration value="30.01" />
+                                                                    <xs:enumeration value="4" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="0.7" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="4" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularLowerLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0" />
+                                                                    <xs:enumeration value="-0.001" />
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="0" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0" />
+                                                                    <xs:enumeration value="-0.01" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="0" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.0" />
+                                                                    <xs:enumeration value="-0.001" />
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="-2" />
+                                                                    <xs:enumeration value="0.001" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularUpperLimit">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.001" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="10.00" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.01" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="10.01" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-30.001" />
+                                                                    <xs:enumeration value="0.0" />
+                                                                    <xs:enumeration value="0.001" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearStiffness">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.2" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="200" />
+                                                                    <xs:enumeration value="500" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="0.79" />
+                                                                    <xs:enumeration value="200" />
+                                                                    <xs:enumeration value="500" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="0.7" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="200" />
+                                                                    <xs:enumeration value="500" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularStiffness">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="90" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.73" />
+                                                                    <xs:enumeration value="100" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="70" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.2" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="40" />
+                                                                    <xs:enumeration value="500" />
+                                                                    <xs:enumeration value="5000" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearDamping">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="1" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.75" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="0.9" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularDamping">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.15" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.6" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.35" />
+                                                                    <xs:enumeration value="0.95" />
+                                                                    <xs:enumeration value="0.99" />
+                                                                    <xs:enumeration value="1" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearEquilibrium">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" type="xs:integer" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="5" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.2" />
+                                                                    <xs:enumeration value="1.2" />
+                                                                    <xs:enumeration value="20" />
+                                                                    <xs:enumeration value="3" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" type="xs:integer" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-1" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="7" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularEquilibrium" minOccurs="0">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" type="xs:integer" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="4" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.6" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="4" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="1.9" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="4" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="linearBounce" minOccurs="0">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-3.1" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.5" />
+                                                                    <xs:enumeration value="10" />
+                                                                    <xs:enumeration value="110" />
+                                                                    <xs:enumeration value="3.1" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-1" />
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="110" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.2" />
+                                                                    <xs:enumeration value="110" />
+                                                                    <xs:enumeration value="2" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="angularBounce" minOccurs="0">
+                                                    <xs:complexType>
+                                                        <xs:Element name="x" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-3.1" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.12" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="111" />
+                                                                    <xs:enumeration value="3.1" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="y" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.3" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="1.1" />
+                                                                    <xs:enumeration value="111" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                        <xs:Element name="z" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="-0.3" />
+                                                                    <xs:enumeration value="0.1" />
+                                                                    <xs:enumeration value="0.4" />
+                                                                    <xs:enumeration value="1" />
+                                                                    <xs:enumeration value="111" />
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:Element>
+                                                    </xs:complexType>
+                                                </xs:element>
+                                                <xs:element name="minDistanceFactor" minOccurs="0" type="xs:string" />
+                                                <xs:element name="maxDistanceFactor" minOccurs="0" type="xs:string" />
+                                                <xs:element name="stiffness" minOccurs="0" type="xs:string" />
+                                                <xs:element name="damping" minOccurs="0" type="xs:string" />
+                                                <xs:element name="equilibrium" minOccurs="0" type="xs:string" />
+                                            </xs:sequence>
+                                            <xs:Element name="bodyA" use="required" />
+                                            <xs:Element name="bodyB" />
+                                            <xs:Element name="BodyB" />
+                                            <xs:Element name="BodyC" />
+                                            <xs:Element name="bodyC" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="conetwist-constraint" maxOccurs="unbounded">
+                                        <xs:complexType>
+                                            <xs:sequence>
+                                                <xs:element name="angularOnly" type="xs:string" />
+                                                <xs:element name="limitZ" type="xs:string" />
+                                                <xs:element name="limitY" type="xs:string" />
+                                                <xs:element name="limitX" type="xs:string" />
+                                                <xs:element name="limitSoftness" type="xs:string" />
+                                                <xs:element name="biasFactor" type="xs:string" />
+                                                <xs:element name="relaxationFactor" type="xs:string" />
+                                            </xs:sequence>
+                                            <xs:Element name="bodyA" use="required" />
+                                            <xs:Element name="bodyB" use="required" />
+                                            <xs:Element name="BodyC" />
+                                        </xs:complexType>
+                                    </xs:element>
+                                </xs:sequence>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+        <xs:Element name="name" use="required" />
+    </xs:complexType>
+</xs:schema>

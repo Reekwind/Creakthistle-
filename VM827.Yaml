@@ -1,0 +1,94 @@
+
+github -b 
+go
+
+ create 
+    mode 
+    github/workflows/Travels-The-Path.yml
+
+diff
+Creata new file 01.XML
+index b98ff7
+--- /dev/null
++++ b/.github/workflows/Travels-The-Path.yml
+@@ -0,0 +1,35 @@
++name: .NET
++
++on:
++  push:
++    branches: [ master ]
++  pull_request:
++    branches: [ master ]
++
++jobs:
++  build:
++
++    runs-on: ubuntu-latest
++
++    steps:
++    - uses: actions/checkout@v2
++    - name: Setup .NET
++      uses: actions/setup-dotnet@v1
++      with:
++        dotnet-version: 5.0.x
++    - name: Restore dependencies
++      run: dotnet restore
++    - name: Build
++      run: dotnet build --no-restore
++    - name: Test
++      run: dotnet test --no-build --verbosity normal
++      
++    - name: Setup Go environment
++      uses: actions/setup-go@v2.1.4
++      with:
++        # The Go version to download (if necessary) and use. Supports semver spec and ranges.
++        go-version: 2.1.4
++        # Whether to download only stable versions
++        stable: variable
++        # Used to pull node distributions from go-versions.  Since there's a default, this is typically not supplied by the user.
++        token: ${{ github.token }}
+
+From 35d08e87340757a16aeac3381cbc7618c3d41d88 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Jesper=20Bringst=C3=A5l-M=C3=A5rtensson?=
+ <88229935+Creakthistle@users.noreply.github.com>
+
+ name: Labeler
+-on: [pull_request]
++on: push
+ 
+ jobs:
+   label:
+     steps:
+     - uses: actions/labeler@v2
++            actions/upload-artifact@v2.2.4
+       with:
+         repo-token: "${{ secrets.GITHUB_TOKEN }}"
+     steps:
+     - uses: actions/labeler@v2
+-            actions/upload-artifact@v2.2.4
+       with:
+         repo-token: "${{ secrets.GITHUB_TOKEN }}"
++        
++    - uses: actions/upload-artifact@v2.2.4
++         # Set always-auth in npmrc
++    always-auth: True
++    # Version Spec of the version to use.  Examples: 12.x, 10.15.1, >=10.15.0
++    node-version: 12.x
++    # File containing the version Spec of the version to use.  Examples: .nvmrc, .node-version
++    node-version-file: .json
++    # Target architecture for Node to use. Examples: x86, x64. Will use system architecture by default.
++    architecture: x64
++    # Set this option if you want the action to check for the latest available version that satisfies the version spec
++    token: ${{ github.token }}
++    # Used to specify a package manager for caching in the default directory. Supported values: npm, yarn, pnpm
++    cache: https://github.com/Creakthistle/MyMLApp/blob/Creakthistle-path-Travel/Resources/Baseshape.xml
++    # Used to specify the path to a dependency file: package-lock.json, yarn.lock, etc. Supports wildcards or a list of file names for caching multiple dependencies.
+
+ Resources/{Baseshape.xml => Paddle.xml} | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename Resources/{Baseshape.xml => Paddle.xml} (100%)
+
+diff --git a/Resources/Baseshape.xml b/Resources/Paddle.xml
+similarity index 100%
+rename from Resources/Baseshape.xml
+rename to Resources/Paddle.xml
